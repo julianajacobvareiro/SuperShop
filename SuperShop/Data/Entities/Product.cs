@@ -41,5 +41,8 @@ namespace SuperShop.Data.Entities
 
         [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = false)]
         public double StockPrice { get; set; }
+
+
+        public User User { get; set; }
     }
 }
