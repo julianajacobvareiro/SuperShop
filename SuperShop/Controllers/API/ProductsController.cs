@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using SuperShop.Data;
 
 namespace SuperShop.Controllers.API
@@ -18,7 +19,7 @@ namespace SuperShop.Controllers.API
         [HttpGet]
         public ActionResult GetProducts()
         {
-            return Ok(_productRepository.GetAll());
+            return Ok(_productRepository.GetAllWithUsers());
         }
 
     }
