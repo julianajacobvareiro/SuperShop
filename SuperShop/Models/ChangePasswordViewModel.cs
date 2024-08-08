@@ -14,7 +14,7 @@ namespace SuperShop.Models
 
 
         [Required]
-        [Compare("Password")]
+        [Compare("NewPassword")]
         public string Confirm { get; set; }
     }
 }
