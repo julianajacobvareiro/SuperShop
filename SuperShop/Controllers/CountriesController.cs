@@ -5,6 +5,7 @@ using SuperShop.Data.Entities;
 using SuperShop.Models;
 using System.Threading.Tasks;
 using System;
+using Vereyon.Web;
 
 namespace SuperShop.Controllers
 {
@@ -13,10 +14,13 @@ namespace SuperShop.Controllers
     {
 
         private readonly ICountryRepository _countryRepository;
+        private readonly IFlashMessage _flashMessage;
 
-        public CountriesController(ICountryRepository countryRepository)
+
+        public CountriesController(ICountryRepository countryRepository, IFlashMessage flashMessage)
         {
             _countryRepository = countryRepository;
+            _flashMessage = flashMessage;
         }
 
 
@@ -151,7 +155,7 @@ namespace SuperShop.Controllers
                 }
                 catch (Exception)
                 {
-                    //_flashMessage.Danger("This country already exist!");
+                    _flashMessage.Danger("This country already exist!");
                 }
 
                 return View(country);
